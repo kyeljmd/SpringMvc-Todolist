@@ -57,6 +57,7 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
+        <!-- Other Hibernate Modules -->
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-validator</artifactId>
@@ -64,7 +65,14 @@
 		</dependency>
             
 		
-		<!-- JSTL -->
+		<!-- Other Dependencies -->
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time</artifactId>
+		<version>2.1</version>
+	</dependency>
+            
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
