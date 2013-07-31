@@ -1,5 +1,7 @@
 package com.springexample.forms;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.springexample.model.TaskModel;
 
 public class TaskForm extends WebForm<TaskModel> {
@@ -12,10 +14,12 @@ public class TaskForm extends WebForm<TaskModel> {
 		super(form);
 	}
 	
+	@NotEmpty
 	public void setName(String taskName){
 		target.setTaskName(taskName);
 	}
 	
+	@NotEmpty
 	public void setDescription(String description){
 		target.setDescription(description);
 	}
