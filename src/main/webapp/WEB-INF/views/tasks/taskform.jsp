@@ -14,9 +14,11 @@
             <fieldset>
                 <label>Task Name</label>
                 <form:input name ="name" path="name" /> <br>
+                <form:errors path="name" cssclass="error">xD </form:errors>
                 
                 <label>Task Goal</label>
                 <form:textarea path = "description" /> <br>
+                <form:errors path="description" cssclass="error"></form:errors>
                 
                 <label>Start Date</label>
                 <form:input path ="startDate" cssClass = "datepicker" /> <br/>
