@@ -93,12 +93,13 @@
 			<version>2.1</version>
 		</dependency>
 
-	<dependency>
-		<groupId>org.jadira.usertype</groupId>
-		<artifactId>usertype.core</artifactId>
-		<version>3.0.0.CR1</version>
-	</dependency>
-	
+		<!-- We need this so that and jopa-time-hibernate will work using @Type -->
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.core</artifactId>
+			<version>3.0.0.CR1</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
