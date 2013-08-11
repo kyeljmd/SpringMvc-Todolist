@@ -15,7 +15,7 @@ public abstract class WebForm<T> {
 		target = form;
 	}
 
-	protected T delegate() {
+	public T delegate() {
 		return target;
 	}
 }
