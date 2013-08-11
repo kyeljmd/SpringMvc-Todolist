@@ -24,10 +24,12 @@ public class TaskModel {
 	@Column
 	private String description;
 	
-	@Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
+	@Column
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime startDate;
-
-	@Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
+	
+	@Column
+	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
 	private DateTime endDate;
 	
 	public String getTaskName() {
