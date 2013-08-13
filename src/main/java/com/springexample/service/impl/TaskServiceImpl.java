@@ -20,4 +20,10 @@ public class TaskServiceImpl implements TasksService {
 		return tasks;
 	}
 
+	public TaskModel get(Long id) {
+		return taskDao.get(id);
+	}
+	
+
+
 }
