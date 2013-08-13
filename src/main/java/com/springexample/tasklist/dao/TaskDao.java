@@ -12,9 +12,8 @@ public class TaskDao extends HibernateDao<TaskModel> {
 		return object;
 	}
 
-	public TaskModel delete(TaskModel object) {
-		// TODO Auto-generated method stub
-		return null;
+	public void delete(TaskModel object) {
+		sess().delete(object);
 	}
 
 	public TaskModel get(Long id) {
@@ -22,8 +21,8 @@ public class TaskDao extends HibernateDao<TaskModel> {
 	}
 
 	public TaskModel update(TaskModel object) {
-		// TODO Auto-generated method stub
-		return null;
+		sess().update(object);;
+		return object;
 	}
 
 }
