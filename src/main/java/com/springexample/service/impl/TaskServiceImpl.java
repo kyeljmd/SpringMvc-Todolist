@@ -13,7 +13,8 @@ import com.springexample.tasklist.dao.TaskDao;
 @Transactional
 public class TaskServiceImpl implements TasksService {
 	
-	@Inject private TaskDao taskDao;
+	@Inject 
+	private TaskDao taskDao;
 	
 	public TaskModel save(TaskModel tasks) {
  		taskDao.save(tasks);
@@ -24,6 +25,7 @@ public class TaskServiceImpl implements TasksService {
 		return taskDao.get(id);
 	}
 	
-
-
+	public TaskModel edit(TaskModel task){
+		return taskDao.update(task);
+	}
 }
