@@ -14,12 +14,12 @@ import com.springexample.forms.TaskForm;
 @SessionAttributes(types = {TaskForm.class})
 public interface TaskController {
 
-	@RequestMapping(value = "create" ,method = RequestMethod.GET)
-	ModelAndView createForm();
+	@RequestMapping(value = "/create" ,method = RequestMethod.GET)
+	ModelAndView showForm();
 	
-	@RequestMapping(value = "save", method = RequestMethod.POST)
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	ModelAndView saveTask(TaskForm task,BindingResult result);
 	
-	@RequestMapping(value = "view/{taskId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/view/{taskId}", method = RequestMethod.GET)
 	ModelAndView viewTask(@PathVariable("taskId") Long taskId);
 }

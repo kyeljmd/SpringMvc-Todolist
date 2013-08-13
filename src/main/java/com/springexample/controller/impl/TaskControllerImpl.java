@@ -18,7 +18,7 @@ import com.springexample.model.TaskModel;
 import com.springexample.service.TasksService;
 
 @Controller
-@RequestMapping("/tasks/")
+@RequestMapping("/tasks")
 public class TaskControllerImpl implements TaskController {
 
 	private static final String FORM_OBJECT = "task";
@@ -26,35 +26,36 @@ public class TaskControllerImpl implements TaskController {
 	private static final String FORM_VIEW = "tasks/taskform";
 
 	private static final String VIEW_PAGE = "tasks/viewTask";
-	
+
 	private static final String NOT_FOUND = "error/404";
-	
+
 	@Inject
 	private TasksService taskService;
 
-	public ModelAndView createForm() {
+	public ModelAndView showForm() {
 		return render(FORM_VIEW).addAttr(FORM_OBJECT, new TaskForm()).toMav();
 	}
 
-	public ModelAndView saveTask(@Valid @ModelAttribute("task") TaskForm task,
-			BindingResult result) {
-		
+	public ModelAndView saveTask(@Valid @ModelAttribute("task") TaskForm task,BindingResult result) {
+
 		if (!result.hasErrors()) {
 			TaskModel res = taskService.save(task.delegate());
-			return render("redirect:view/"+res.getId()).toMav();
+			return render("redirect:/"+"tasks/view/"+res.getId()).toMav();
 		} else {
 			return render(FORM_VIEW).addAttr(FORM_OBJECT, task).toMav();
 		}
+		
 	}
-	
+
 	public ModelAndView viewTask(@PathVariable("taskId") Long taskId) {
 
 		if (taskId != null) {
-
 			TaskModel task = taskService.get(taskId);
-				System.out.println(task.getTaskName());
+			if(task!=null){
 				return render(VIEW_PAGE).addAttr("taskObj", task).toMav();
-			
+			}else{
+				return render(NOT_FOUND).toMav();
+			}
 		} else {
 			return render(NOT_FOUND).toMav();
 		}
