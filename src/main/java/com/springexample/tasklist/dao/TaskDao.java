@@ -18,8 +18,7 @@ public class TaskDao extends HibernateDao<TaskModel> {
 	}
 
 	public TaskModel get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (TaskModel) sess().get(TaskModel.class, id);
 	}
 
 	public TaskModel update(TaskModel object) {
