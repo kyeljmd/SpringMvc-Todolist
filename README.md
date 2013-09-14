@@ -10,3 +10,7 @@ and its property placholder can be found in
 src -> webapp -> WEB-INF -> resources -> properties -> datasource.properties
 
 Just replace the values that will suit your configuration.
+
+To run the application. just simply type
+
+mvn jetty:run
