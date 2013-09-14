@@ -10,6 +10,7 @@
 	<h1>Hello World</h1>
 	<ul>
     <li><a href =  "tasks/create">Create Task</a></li>
+    <li>${tasks}</li>
 	</ul>
 </body>
 </html>

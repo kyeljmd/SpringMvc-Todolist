@@ -4,6 +4,7 @@
 <html>
   <head>
       <title>New Task</title>
+      <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/semantic.min.css.css"/>">
       <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css"/>">
       <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/jquery-ui.css"/>">
       <style>

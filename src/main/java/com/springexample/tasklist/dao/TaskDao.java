@@ -1,5 +1,8 @@
 package com.springexample.tasklist.dao;
 
+import java.util.List;
+
+import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
 import com.springexample.model.TaskModel;
@@ -25,4 +28,10 @@ public class TaskDao extends HibernateDao<TaskModel> {
 		return object;
 	}
 
+	public List<TaskModel> getTasks(int start, int max){
+		Criteria criteria = sess().createCriteria(TaskModel.class);
+		criteria.setMaxResults(max);
+		criteria.setFirstResult(start);
+		return criteria.list();
+	}
 }

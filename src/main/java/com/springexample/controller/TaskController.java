@@ -22,4 +22,5 @@ public interface TaskController {
 	
 	@RequestMapping(value = "/view/{taskId}", method = RequestMethod.GET)
 	ModelAndView viewTask(@PathVariable("taskId") Long taskId);
+	
 }
